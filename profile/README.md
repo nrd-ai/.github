@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="profile/assets/icon-192.png" width="96" height="96" alt="NotSquat Mark" />
+<img src="https://raw.githubusercontent.com/nrd-ai/.github/main/profile/assets/icon-192.png" width="96" height="96" alt="NotSquat" />
 
 # NotSquat · NRD AI
 
@@ -56,17 +56,17 @@
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="profile/assets/notsquat_home_dark.png" width="230" alt="Home Dashboard" /><br />
+      <img src="https://raw.githubusercontent.com/nrd-ai/.github/main/profile/assets/notsquat_home_dark.png" width="230" alt="Home Dashboard" /><br />
       <b>01 / Capture Validation</b><br />
       <sub>Hands-free scanning with Circle feed</sub>
     </td>
     <td align="center" width="33%">
-      <img src="profile/assets/notsquat_gymtar_dark.png" width="230" alt="Gymtar Studio" /><br />
+      <img src="https://raw.githubusercontent.com/nrd-ai/.github/main/profile/assets/notsquat_gymtar_dark.png" width="230" alt="Gymtar Studio" /><br />
       <b>02 / Gymtar Avatar Studio</b><br />
       <sub>16-bit RPG progression & attribute balance</sub>
     </td>
     <td align="center" width="33%">
-      <img src="profile/assets/notsquat_history_progress_dark.png" width="230" alt="Progress & History" /><br />
+      <img src="https://raw.githubusercontent.com/nrd-ai/.github/main/profile/assets/notsquat_history_progress_dark.png" width="230" alt="Progress & History" /><br />
       <b>03 / Progress & Raids</b><br />
       <sub>Campaign boss drops & volume analytics</sub>
     </td>

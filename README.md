@@ -1,54 +1,92 @@
+<div align="center">
+
+<img src="profile/assets/icon-192.png" width="96" height="96" alt="NotSquat Mark" />
+
 # NotSquat · NRD AI
 
-> **Equipment-utilization software and movement intelligence for strength gyms.**  
+**Equipment-utilization software & biomechanical movement intelligence for strength gyms.**
+
+[![Status: Private Beta](https://img.shields.io/badge/Stage-Private%20Beta-FF5A36?style=for-the-badge&logo=apple&logoColor=white)](https://notsquat.org)
+[![Mobile: Flutter](https://img.shields.io/badge/Client-Flutter%203.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://github.com/nrd-ai/notsquat-mobile-app)
+[![Core: Python](https://img.shields.io/badge/Engine-Python%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/nrd-ai/Not-Squat)
+[![Warehouse: BigQuery](https://img.shields.io/badge/Data-BigQuery%20%7C%20dbt-FF6F00?style=for-the-badge&logo=googlecloud&logoColor=white)](https://github.com/nrd-ai/NotSquat-Data-Warehouse)
+[![Discord: Bot CLI](https://img.shields.io/badge/Ops-org--discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://github.com/nrd-ai/org-discord)
+
 > *"See how your equipment is really being used."*
 
-Welcome to the **NRD AI** organization workspace. This hub coordinates product architecture, mobile client engineering, computer-vision models, data warehouse pipelines, and founding partner programs for NotSquat.
+</div>
 
 ---
 
 ## 🧭 Repository Radar
 
-| Repository | Purpose | Tech Stack | Primary Focus |
+| Repository | Status & Tech | Focus & Description | Link |
 |---|---|---|---|
-| [`Not-Squat`](https://github.com/nrd-ai/Not-Squat) | **Central Hub & Platform Core** — Brand strategy, business architecture, backend specifications, and asset storage | Python, Fastify/Node, Markdown | Business readiness, agent fleet contracts, canonical screenshot archive |
-| [`notsquat-mobile-app`](https://github.com/nrd-ai/notsquat-mobile-app) | **Mobile Application Client** — Real-time on-device workout capture, Gymtar RPG avatar progression, and gym circle feeds | Flutter, Dart, Riverpod, Google ML Kit | Hands-free mixed exercise capture validation (`/session`), avatar customization |
-| [`notsquat-marketing-site`](https://github.com/nrd-ai/notsquat-marketing-site) | **Partner & Marketing Web Suite** — Founding-gym partner one-pager, operator deck, and web showcase | Modern HTML5, CSS3, Vanilla JS | Founding-gym design partner applications, live athletic editorial layouts |
-| [`NotSquat-Data-Warehouse`](https://github.com/nrd-ai/NotSquat-Data-Warehouse) | **Telemetry & Analytics Warehouse** — Session metrics, aggregated equipment occupancy, and warehouse models | BigQuery, dbt, SQL, Python | Privacy-preserving aggregate station utilization analytics |
-| [`Not-Squat-Detector-v0`](https://github.com/nrd-ai/Not-Squat-Detector-v0) | **CV Research Prototype** — Experimental computer vision pipelines for barbell & rep kinematics | Python, OpenCV, MediaPipe | Kinematic angle calculation, barbell velocity, and occlusion recovery |
-| [`org-discord`](https://github.com/nrd-ai/org-discord) | **Team Agent Integrations** — Portable REST-only agent skill for company Discord collaboration | Python, REST API | Safe allowlisted channel telemetry and agent announcements |
+| [**`Not-Squat`**](https://github.com/nrd-ai/Not-Squat) | [![Core Repo](https://img.shields.io/badge/repo-Not--Squat-10100F?style=flat-square&logo=github)](https://github.com/nrd-ai/Not-Squat) | Central hub for product specifications, brand strategy, business readiness, and canonical screenshot archive. | [View Repo ➔](https://github.com/nrd-ai/Not-Squat) |
+| [**`notsquat-mobile-app`**](https://github.com/nrd-ai/notsquat-mobile-app) | [![Flutter Client](https://img.shields.io/badge/repo-mobile--app-02569B?style=flat-square&logo=flutter)](https://github.com/nrd-ai/notsquat-mobile-app) | iOS and Android client featuring hands-free optical capture validation, on-device Google ML Kit pose estimation, and Gymtar RPG studio. | [View Repo ➔](https://github.com/nrd-ai/notsquat-mobile-app) |
+| [**`notsquat-marketing-site`**](https://github.com/nrd-ai/notsquat-marketing-site) | [![Partner Site](https://img.shields.io/badge/repo-marketing--site-FF5A36?style=flat-square&logo=cloudflare)](https://github.com/nrd-ai/notsquat-marketing-site) | Founding gym design-partner one-pager, operator presentation deck, and official email signature studio. | [View Repo ➔](https://github.com/nrd-ai/notsquat-marketing-site) |
+| [**`NotSquat-Data-Warehouse`**](https://github.com/nrd-ai/NotSquat-Data-Warehouse) | [![Data Warehouse](https://img.shields.io/badge/repo-data--warehouse-FF6F00?style=flat-square&logo=googlebigquery)](https://github.com/nrd-ai/NotSquat-Data-Warehouse) | BigQuery, dbt, and Cloud Storage pipelines for privacy-preserving station occupancy and utilization telemetry. | [View Repo ➔](https://github.com/nrd-ai/NotSquat-Data-Warehouse) |
+| [**`Not-Squat-Detector-v0`**](https://github.com/nrd-ai/Not-Squat-Detector-v0) | [![CV Prototype](https://img.shields.io/badge/repo-detector--v0-3776AB?style=flat-square&logo=opencv)](https://github.com/nrd-ai/Not-Squat-Detector-v0) | Experimental computer-vision pipeline for barbell tracking, joint kinematics, and rep cycle state machines. | [View Repo ➔](https://github.com/nrd-ai/Not-Squat-Detector-v0) |
+| [**`org-discord`**](https://github.com/nrd-ai/org-discord) | [![Discord Agent](https://img.shields.io/badge/repo-org--discord-5865F2?style=flat-square&logo=discord)](https://github.com/nrd-ai/org-discord) | Portable REST-only agent skill with allowlisted channels for founder Discord telemetry and announcements. | [View Repo ➔](https://github.com/nrd-ai/org-discord) |
 
 ---
 
-## ⚡ Active Workstreams & Member Updates
+## ⚡ Recent Member Updates (Josh & Maurice)
 
-### 1. 📱 Mobile App Capture Validation (`nrd-ai/notsquat-mobile-app`)
-- **Hands-Free Scanning Flow:** Transitioned capture activation to readiness-gated `Start scanning` with automatic squat vs. jumping jack classification.
-- **On-Device Inference:** Google ML Kit pose detection integrated natively on iOS and Android without cloud frame streaming.
-- **Gymtar Studio & Raid Campaigns:** Integrated 16-bit pixel character progression, XP curves, campaign boss raids (Grip Ghost, Chalk Wraith), and attribute radar charts.
-
-### 2. 🏛️ Founding Partner Gym Rollout (`nrd-ai/notsquat-marketing-site`)
-- **Design Partnership Offer:** No-cost collaborative pilot program for independent strength and bodybuilding gyms.
-- **Real Build Showcases:** Replaced legacy concept mocks with authentic iOS simulator and device screenshots across all partner decks and one-pagers.
-- **Email Signature Studio:** Added official dark/light HTML email signature generator for team outreach.
-
-### 3. 📊 Analytics & Privacy Infrastructure (`nrd-ai/NotSquat-Data-Warehouse`)
-- **Equipment-Centered Metrics:** Engineering pipeline to separate active lifting time from rest and idle station occupancy.
-- **Privacy Boundaries:** Strict adherence to aggregate, de-identified reporting — zero persistent member surveillance or facial biometrics.
-
----
-
-## 🛡️ Engineering & Brand Guardrails
-
-1. **Claims Discipline:** Plans, working components, and validated results are strictly separated. Do not claim unverified accuracy, privacy compliance, or commercial outcomes in customer-facing materials without founder approval.
-2. **Brand Source of Truth:** Review [`docs/BRAND_STRATEGY.md`](https://github.com/nrd-ai/Not-Squat/blob/main/docs/BRAND_STRATEGY.md) and [`docs/BUSINESS_READINESS.md`](https://github.com/nrd-ai/Not-Squat/blob/main/docs/BUSINESS_READINESS.md) before publishing positioning or visual changes.
-3. **Clean Code & Reversibility:** Avoid committing debug overrides, temporary simulator routing hacks, or synthetic mockups.
+| Date | Repository | Author | Commit / Change Description | Link |
+|---|---|---|---|---|
+| **2026-08-24** | `Not-Squat` | **Josh** | `fac420c` — Archive canonical iOS build screenshots and capture catalog across all routes | [PR #19](https://github.com/nrd-ai/Not-Squat/pull/19) |
+| **2026-08-24** | `notsquat-marketing-site` | **Josh** | `380d7e0` — Replace legacy demo app images with real iOS screenshots and update alt text | [PR #2](https://github.com/nrd-ai/notsquat-marketing-site/pull/2) |
+| **2026-08-23** | `Not-Squat` | **Maurice** | `33c9ef8` — Remove email signature preview border for clean export | [Commit](https://github.com/nrd-ai/Not-Squat/commit/33c9ef8) |
+| **2026-08-23** | `Not-Squat` | **Maurice** | `7e58309` — Simplify minimal email signature layout and typography | [Commit](https://github.com/nrd-ai/Not-Squat/commit/7e58309) |
+| **2026-08-23** | `Not-Squat` | **Josh** | `88f4979` — Add official NotSquat HTML email signature studio | [Commit](https://github.com/nrd-ai/Not-Squat/commit/88f4979) |
+| **2026-08-23** | `notsquat-mobile-app` | **Josh** | `e939216` — Fix camera preview aspect ratio to eliminate distortion | [PR #8](https://github.com/nrd-ai/notsquat-mobile-app/pull/8) |
+| **2026-08-23** | `notsquat-mobile-app` | **Josh** | `9187d62` — Drop unused speech-to-text dependency and microphone permissions | [PR #7](https://github.com/nrd-ai/notsquat-mobile-app/pull/7) |
+| **2026-08-23** | `notsquat-mobile-app` | **Josh** | `856bde6` — Add real on-device camera workout capture and ML Kit pose streaming | [PR #6](https://github.com/nrd-ai/notsquat-mobile-app/pull/6) |
+| **2026-08-23** | `notsquat-marketing-site` | **Josh** | `aa20307` — Update partner gym pitch deck to 1080px dark athletic layout | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/aa20307) |
+| **2026-08-23** | `notsquat-marketing-site` | **Josh** | `78da11e` — Redesign partner gym one-pager layout to clean athletic aesthetic | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/78da11e) |
+| **2026-08-23** | `notsquat-marketing-site` | **Maurice** | `3a4db44` — Refine problem item messaging and station utilization clarity | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/3a4db44) |
+| **2026-08-23** | `notsquat-marketing-site` | **Maurice** | `73b1d4f` — Refine effort record copy and training history narrative | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/73b1d4f) |
 
 ---
 
-## 👥 Quick Links for Members
+## 📱 Mobile App Experience Showcase
 
-- 📋 [NotSquat Main Repo Issues](https://github.com/nrd-ai/Not-Squat/issues)
-- 🚀 [Mobile App PRs & Roadmap](https://github.com/nrd-ai/notsquat-mobile-app/pulls)
-- 🎨 [Brand Strategy Guide](https://github.com/nrd-ai/Not-Squat/blob/main/docs/BRAND_STRATEGY.md)
-- 💬 [Company Discord Skill](https://github.com/nrd-ai/org-discord)
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="profile/assets/notsquat_home_dark.png" width="230" alt="Home Dashboard" /><br />
+      <b>01 / Capture Validation</b><br />
+      <sub>Hands-free scanning with Circle feed</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="profile/assets/notsquat_gymtar_dark.png" width="230" alt="Gymtar Studio" /><br />
+      <b>02 / Gymtar Avatar Studio</b><br />
+      <sub>16-bit RPG progression & attribute balance</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="profile/assets/notsquat_history_progress_dark.png" width="230" alt="Progress & History" /><br />
+      <b>03 / Progress & Raids</b><br />
+      <sub>Campaign boss drops & volume analytics</sub>
+    </td>
+  </tr>
+</table>
+</div>
+
+---
+
+## 🛡️ Core Brand & Engineering Rules
+
+- **Brand Source of Truth:** Consult [`docs/BRAND_STRATEGY.md`](https://github.com/nrd-ai/Not-Squat/blob/main/docs/BRAND_STRATEGY.md) and [`docs/BUSINESS_READINESS.md`](https://github.com/nrd-ai/Not-Squat/blob/main/docs/BUSINESS_READINESS.md).
+- **Privacy Architecture:** Focus on aggregate, station-centered metrics. Never claim unverified privacy behavior or store raw camera feeds without explicit founder agreement.
+- **Claims Guardrail:** Clearly separate working components from validated end-to-end results. No fabricated metrics, testimonials, or ROI claims.
+
+---
+
+## 👥 Member Shortcuts
+
+- 📋 [Not-Squat Issue Tracker](https://github.com/nrd-ai/Not-Squat/issues)
+- 🚀 [Mobile App Pull Requests](https://github.com/nrd-ai/notsquat-mobile-app/pulls)
+- 🎨 [Brand Guidelines](https://github.com/nrd-ai/Not-Squat/blob/main/docs/BRAND_STRATEGY.md)
+- 💬 [Company Discord](https://github.com/nrd-ai/org-discord)

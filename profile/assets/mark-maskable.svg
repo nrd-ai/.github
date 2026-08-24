@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Maskable/adaptive-icon variant: bars sit inside Android's ~66% safe zone
+       so circular/squircle/rounded-square masks never clip the artwork. -->
+  <rect width="64" height="64" fill="#10100f"/>
+  <rect x="15" y="34" width="8" height="16" rx="2" fill="#4a473f"/>
+  <rect x="28" y="22" width="8" height="28" rx="2" fill="#ff5a36"/>
+  <rect x="41" y="28" width="8" height="22" rx="2" fill="#cfc9ba"/>
+</svg>

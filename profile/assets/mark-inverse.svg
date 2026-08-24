@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Light-background variant of the mark, for print and light-mode surfaces. -->
+  <rect width="64" height="64" rx="12" fill="#f2efe8"/>
+  <rect x="11" y="30" width="10" height="20" rx="2" fill="#656258"/>
+  <rect x="27" y="16" width="10" height="34" rx="2" fill="#ff5a36"/>
+  <rect x="43" y="24" width="10" height="26" rx="2" fill="#10100f"/>
+</svg>

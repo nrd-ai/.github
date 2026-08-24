@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Full-bleed, unrounded variant of the mark for native app-icon pipelines
+       (Android adaptive icons, iOS AppIcon) where the OS applies its own mask. -->
+  <rect width="64" height="64" fill="#10100f"/>
+  <rect x="11" y="30" width="10" height="20" rx="2" fill="#4a473f"/>
+  <rect x="27" y="16" width="10" height="34" rx="2" fill="#ff5a36"/>
+  <rect x="43" y="24" width="10" height="26" rx="2" fill="#cfc9ba"/>
+</svg>

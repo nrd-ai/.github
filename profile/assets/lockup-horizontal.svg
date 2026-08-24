@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72">
+  <!-- Default lockup: dark tile mark + light wordmark, for dark backgrounds. -->
+  <g transform="translate(0,4)">
+    <rect width="64" height="64" rx="12" fill="#10100f"/>
+    <rect x="11" y="30" width="10" height="20" rx="2" fill="#4a473f"/>
+    <rect x="27" y="16" width="10" height="34" rx="2" fill="#ff5a36"/>
+    <rect x="43" y="24" width="10" height="26" rx="2" fill="#cfc9ba"/>
+  </g>
+  <text x="80" y="46" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="900"
+        font-size="34" letter-spacing="0.5" fill="#f2efe8">NOTSQUAT</text>
+</svg>

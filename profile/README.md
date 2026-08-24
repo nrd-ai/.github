@@ -31,22 +31,29 @@
 
 ---
 
-## ⚡ Recent Member Updates (Josh & Maurice)
+## ⚡ Recent Member Updates (All Branches · Josh & Maurice)
 
-| Date | Repository | Author | Commit / Change Description | Link |
-|---|---|---|---|---|
-| **2026-08-24** | `Not-Squat` | **Josh** | `fac420c` — Archive canonical iOS build screenshots and capture catalog across all routes | [PR #19](https://github.com/nrd-ai/Not-Squat/pull/19) |
-| **2026-08-24** | `notsquat-marketing-site` | **Josh** | `380d7e0` — Replace legacy demo app images with real iOS screenshots and update alt text | [PR #2](https://github.com/nrd-ai/notsquat-marketing-site/pull/2) |
-| **2026-08-23** | `Not-Squat` | **Maurice** | `33c9ef8` — Remove email signature preview border for clean export | [Commit](https://github.com/nrd-ai/Not-Squat/commit/33c9ef8) |
-| **2026-08-23** | `Not-Squat` | **Maurice** | `7e58309` — Simplify minimal email signature layout and typography | [Commit](https://github.com/nrd-ai/Not-Squat/commit/7e58309) |
-| **2026-08-23** | `Not-Squat` | **Josh** | `88f4979` — Add official NotSquat HTML email signature studio | [Commit](https://github.com/nrd-ai/Not-Squat/commit/88f4979) |
-| **2026-08-23** | `notsquat-mobile-app` | **Josh** | `e939216` — Fix camera preview aspect ratio to eliminate distortion | [PR #8](https://github.com/nrd-ai/notsquat-mobile-app/pull/8) |
-| **2026-08-23** | `notsquat-mobile-app` | **Josh** | `9187d62` — Drop unused speech-to-text dependency and microphone permissions | [PR #7](https://github.com/nrd-ai/notsquat-mobile-app/pull/7) |
-| **2026-08-23** | `notsquat-mobile-app` | **Josh** | `856bde6` — Add real on-device camera workout capture and ML Kit pose streaming | [PR #6](https://github.com/nrd-ai/notsquat-mobile-app/pull/6) |
-| **2026-08-23** | `notsquat-marketing-site` | **Josh** | `aa20307` — Update partner gym pitch deck to 1080px dark athletic layout | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/aa20307) |
-| **2026-08-23** | `notsquat-marketing-site` | **Josh** | `78da11e` — Redesign partner gym one-pager layout to clean athletic aesthetic | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/78da11e) |
-| **2026-08-23** | `notsquat-marketing-site` | **Maurice** | `3a4db44` — Refine problem item messaging and station utilization clarity | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/3a4db44) |
-| **2026-08-23** | `notsquat-marketing-site` | **Maurice** | `73b1d4f` — Refine effort record copy and training history narrative | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/73b1d4f) |
+| Date & Time (CDT) | Repository | Branch | Author | Commit / Change Description | Link |
+|---|---|---|---|---|---|
+| **2026-08-24 08:25** | `Not-Squat` | `feat/app-screenshots-storage` | **Josh** | `fac420c` — Archive canonical iOS build screenshots & capture catalog | [PR #19](https://github.com/nrd-ai/Not-Squat/pull/19) |
+| **2026-08-24 08:24** | `notsquat-marketing-site` | `feat/real-app-screenshots` | **Josh** | `380d7e0` — Replace legacy demo app images with real iOS screenshots & update alt text | [PR #2](https://github.com/nrd-ai/notsquat-marketing-site/pull/2) |
+| **2026-08-23 16:11** | `NotSquat-Data-Warehouse` | `main` | **Josh** | `b90006c` — Interweave NotSquat Mobile App B2C telemetry into warehouse architecture | [PR #2](https://github.com/nrd-ai/NotSquat-Data-Warehouse/pull/2) |
+| **2026-08-23 16:11** | `notsquat-mobile-app` | `main` | **Josh** | `e939216` — Merge camera preview aspect ratio fix into main | [PR #8](https://github.com/nrd-ai/notsquat-mobile-app/pull/8) |
+| **2026-08-23 16:10** | `notsquat-mobile-app` | `fix/camera-preview-aspect-ratio` | **Josh** | `669d77e` — Stop stretching the camera preview | [Commit](https://github.com/nrd-ai/notsquat-mobile-app/commit/669d77e) |
+| **2026-08-23 15:57** | `notsquat-mobile-app` | `chore/drop-unused-speech-dep` | **Josh** | `61136b0` — Drop unused speech_to_text dependency and microphone permissions | [PR #7](https://github.com/nrd-ai/notsquat-mobile-app/pull/7) |
+| **2026-08-23 15:39** | `notsquat-mobile-app` | `feat/on-device-camera-capture` | **Josh** | `c77c3ad` — Integrate on-device capture with edge-to-edge layout | [Commit](https://github.com/nrd-ai/notsquat-mobile-app/commit/c77c3ad) |
+| **2026-08-23 15:31** | `notsquat-mobile-app` | `feat/on-device-camera-capture` | **Maurice** | `c991b38` — Integrate mixed capture validation flow | [Commit](https://github.com/nrd-ai/notsquat-mobile-app/commit/c991b38) |
+| **2026-08-23 15:29** | `notsquat-mobile-app` | `feat/on-device-camera-capture` | **Maurice** | `ac0eb01` — Add real on-device workout capture and ML Kit pose streaming | [Commit](https://github.com/nrd-ai/notsquat-mobile-app/commit/ac0eb01) |
+| **2026-08-23 15:25** | `notsquat-mobile-app` | `feat/on-device-camera-capture` | **Maurice** | `9abde0b` — Add video capture agent execution plan & spec | [Commit](https://github.com/nrd-ai/notsquat-mobile-app/commit/9abde0b) |
+| **2026-08-23 13:18** | `Not-Squat` | `main` | **Maurice** | `33c9ef8` — Remove email signature preview border for clean export | [Commit](https://github.com/nrd-ai/Not-Squat/commit/33c9ef8) |
+| **2026-08-23 12:25** | `Not-Squat` | `main` | **Maurice** | `7e58309` — Simplify minimal email signature layout & typography | [Commit](https://github.com/nrd-ai/Not-Squat/commit/7e58309) |
+| **2026-08-23 11:36** | `notsquat-marketing-site` | `main` | **Josh** | `aa20307` — Update partner gym pitch deck to 1080px dark athletic layout | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/aa20307) |
+| **2026-08-23 11:09** | `notsquat-marketing-site` | `main` | **Josh** | `78da11e` — Redesign partner gym one-pager layout to clean athletic aesthetic | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/78da11e) |
+| **2026-08-23 09:50** | `Not-Squat` | `main` | **Josh** | `88f4979` — Add official NotSquat HTML email signature studio | [Commit](https://github.com/nrd-ai/Not-Squat/commit/88f4979) |
+| **2026-08-23 03:15** | `notsquat-marketing-site` | `main` | **Maurice** | `3a4db44` — Refine problem item messaging and station utilization clarity | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/3a4db44) |
+| **2026-08-23 01:46** | `notsquat-marketing-site` | `main` | **Maurice** | `73b1d4f` — Refine effort record copy and training history narrative | [Commit](https://github.com/nrd-ai/notsquat-marketing-site/commit/73b1d4f) |
+| **2026-08-19 01:59** | `Not-Squat-Detector-v0` | `main` | **Maurice** | `3b586a9` — Add partial-body inference and session diagnostics | [Commit](https://github.com/nrd-ai/Not-Squat-Detector-v0/commit/3b586a9) |
+| **2026-08-18 11:34** | `org-discord` | `main` | **Maurice** | `22fee75` — Add native Discord reply support | [Commit](https://github.com/nrd-ai/org-discord/commit/22fee75) |
 
 ---
 

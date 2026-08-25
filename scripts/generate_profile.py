@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate the NRD AI / NotSquat GitHub Organization profile README.
-Fetches recent commits and pull requests across all repositories in nrd-ai.
+Fetches recent commits and pull requests across ALL branches and repositories in nrd-ai.
 """
 
 import os
@@ -18,7 +18,8 @@ REPOS = [
     "notsquat-marketing-site",
     "NotSquat-Data-Warehouse",
     "Not-Squat-Detector-v0",
-    "org-discord"
+    "org-discord",
+    ".github"
 ]
 
 REPO_METADATA = {
@@ -45,6 +46,10 @@ REPO_METADATA = {
     "org-discord": {
         "badge": "[![Discord Agent](https://img.shields.io/badge/repo-org--discord-5865F2?style=flat-square&logo=discord)](https://github.com/nrd-ai/org-discord)",
         "desc": "Portable REST-only agent skill with allowlisted channels for founder Discord telemetry and announcements."
+    },
+    ".github": {
+        "badge": "[![Org Profile](https://img.shields.io/badge/repo-.github-222220?style=flat-square&logo=github)](https://github.com/nrd-ai/.github)",
+        "desc": "Organization profile workspace, dashboard automations, and shared workflow assets."
     }
 }
 
@@ -56,7 +61,8 @@ AUTHOR_MAP = {
     "maurice": "Maurice",
     "mcadenhead": "Maurice",
     "maurice cadenhead": "Maurice",
-    "cadenhead": "Maurice"
+    "cadenhead": "Maurice",
+    "google-labs-jules[bot]": "Jules (AI)"
 }
 
 def format_author(name_or_login):
@@ -68,7 +74,6 @@ def format_author(name_or_login):
 def api_get(endpoint):
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
-        # Fallback to gh CLI if available
         try:
             res = subprocess.run(["gh", "api", endpoint], capture_output=True, text=True, check=True)
             return json.loads(res.stdout)
@@ -94,19 +99,16 @@ def api_get(endpoint):
 def parse_iso_time(iso_str):
     if not iso_str:
         return None
-    # e.g. 2026-08-24T13:25:55Z
     dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
-    # Convert to CDT (UTC-5)
     cdt_tz = timezone(timedelta(hours=-5))
-    dt_cdt = dt.astimezone(cdt_tz)
-    return dt_cdt
+    return dt.astimezone(cdt_tz)
 
 def fetch_recent_activity():
     activities = []
     
     for repo in REPOS:
         # 1. Fetch Pull Requests
-        pulls = api_get(f"repos/{ORG}/{repo}/pulls?state=all&sort=updated&direction=desc&per_page=5")
+        pulls = api_get(f"repos/{ORG}/{repo}/pulls?state=all&sort=updated&direction=desc&per_page=10")
         if isinstance(pulls, list):
             for pr in pulls:
                 created_dt = parse_iso_time(pr.get("created_at"))
@@ -115,49 +117,62 @@ def fetch_recent_activity():
                 if not effective_dt:
                     continue
                 author = format_author(pr.get("user", {}).get("login"))
-                state_prefix = "Merged PR" if merged_dt else f"PR #{pr.get('number')}"
+                branch_name = pr.get("head", {}).get("ref", "main")
+                pr_num = pr.get("number")
+                pr_title = pr.get("title")
+                state = pr.get("state")
+                prefix = "Merged PR" if merged_dt else f"Open PR"
                 activities.append({
                     "dt": effective_dt,
                     "repo": repo,
-                    "branch": pr.get("head", {}).get("ref", "main"),
+                    "branch": branch_name,
                     "author": author,
-                    "desc": f"PR #{pr.get('number')} — {pr.get('title')}",
+                    "desc": f"{prefix} #{pr_num} — {pr_title}",
                     "url": pr.get("html_url")
                 })
         
-        # 2. Fetch Commits on main and active branches
-        commits = api_get(f"repos/{ORG}/{repo}/commits?per_page=5")
-        if isinstance(commits, list):
-            for c in commits:
-                commit_info = c.get("commit", {})
-                author_name = commit_info.get("author", {}).get("name")
-                author = format_author(author_name)
-                commit_dt = parse_iso_time(commit_info.get("author", {}).get("date"))
-                if not commit_dt:
+        # 2. Fetch all branches and commits for each branch
+        branches = api_get(f"repos/{ORG}/{repo}/branches")
+        if isinstance(branches, list):
+            for b in branches:
+                bname = b.get("name")
+                if not bname:
                     continue
-                sha7 = c.get("sha", "")[:7]
-                first_line = commit_info.get("message", "").split("\n")[0]
-                activities.append({
-                    "dt": commit_dt,
-                    "repo": repo,
-                    "branch": "main",
-                    "author": author,
-                    "desc": f"`{sha7}` — {first_line}",
-                    "url": c.get("html_url")
-                })
+                commits = api_get(f"repos/{ORG}/{repo}/commits?sha={bname}&per_page=10")
+                if isinstance(commits, list):
+                    for c in commits:
+                        commit_info = c.get("commit", {})
+                        author_name = commit_info.get("author", {}).get("name")
+                        author = format_author(author_name)
+                        commit_dt = parse_iso_time(commit_info.get("author", {}).get("date"))
+                        if not commit_dt:
+                            continue
+                        sha7 = c.get("sha", "")[:7]
+                        first_line = commit_info.get("message", "").split("\n")[0]
+                        # Skip auto-generated bot commits from flooding
+                        if "auto-update organization activity" in first_line:
+                            continue
+                        activities.append({
+                            "dt": commit_dt,
+                            "repo": repo,
+                            "branch": bname,
+                            "author": author,
+                            "desc": f"`{sha7}` — {first_line}",
+                            "url": c.get("html_url")
+                        })
 
     # Sort descending by timestamp
     activities.sort(key=lambda x: x["dt"], reverse=True)
     
-    # Deduplicate by URL/description
+    # Deduplicate
     seen = set()
     deduped = []
     for a in activities:
-        key = (a["repo"], a["desc"][:25])
+        key = (a["repo"], a["branch"], a["desc"][:25])
         if key not in seen:
             seen.add(key)
             deduped.append(a)
-            if len(deduped) >= 20:
+            if len(deduped) >= 30:
                 break
                 
     return deduped
@@ -179,7 +194,8 @@ def build_markdown(activities):
     lines.append('## 🧭 Repository Radar\n')
     lines.append('| Repository | Status & Tech | Focus & Description | Link |')
     lines.append('|---|---|---|---|')
-    for repo in REPOS:
+    radar_repos = ["Not-Squat", "notsquat-mobile-app", "notsquat-marketing-site", "NotSquat-Data-Warehouse", "Not-Squat-Detector-v0", "org-discord"]
+    for repo in radar_repos:
         meta = REPO_METADATA.get(repo, {})
         lines.append(f'| [**`{repo}`**](https://github.com/{ORG}/{repo}) | {meta.get("badge", "")} | {meta.get("desc", "")} | [View Repo ➔](https://github.com/{ORG}/{repo}) |')
     
@@ -234,9 +250,9 @@ def build_markdown(activities):
     return "\n".join(lines)
 
 def main():
-    print("Fetching recent organization activity across repos...")
+    print("Fetching recent organization activity across all branches and repos...")
     activities = fetch_recent_activity()
-    print(f"Found {len(activities)} recent updates.")
+    print(f"Found {len(activities)} recent updates across all branches.")
     content = build_markdown(activities)
     
     with open("profile/README.md", "w") as f:

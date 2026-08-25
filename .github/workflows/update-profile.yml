@@ -1,0 +1,42 @@
+name: Update Organization Profile
+
+on:
+  schedule:
+    # Runs every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [pr_merged, repo_updated, refresh_profile]
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout .github repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Profile Generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/generate_profile.py
+
+      - name: Commit and push changes if updated
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add profile/README.md README.md
+          if git diff --staged --quiet; then
+            echo "No changes detected in organization profile."
+          else
+            git commit -m "chore(profile): auto-update organization activity and member updates"
+            git push origin main
+          fi

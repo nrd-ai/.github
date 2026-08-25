@@ -13,13 +13,12 @@ from datetime import datetime, timezone, timedelta
 
 ORG = "nrd-ai"
 REPOS = [
-    "Not-Squat",
     "notsquat-mobile-app",
+    "Not-Squat",
     "notsquat-marketing-site",
     "NotSquat-Data-Warehouse",
     "Not-Squat-Detector-v0",
-    "org-discord",
-    ".github"
+    "org-discord"
 ]
 
 REPO_METADATA = {

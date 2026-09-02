@@ -16,6 +16,7 @@ REPOS = [
     "notsquat-mobile-app",
     "Not-Squat",
     "notsquat-marketing-site",
+    "pixel-sprite-lab",
     "NotSquat-Data-Warehouse",
     "Not-Squat-Detector-v0",
     "org-discord"
@@ -31,8 +32,12 @@ REPO_METADATA = {
         "desc": "iOS and Android client featuring hands-free optical capture validation, on-device Google ML Kit pose estimation, and Gymtar RPG studio."
     },
     "notsquat-marketing-site": {
-        "badge": "[![Partner Site](https://img.shields.io/badge/repo-marketing--site-FF5A36?style=flat-square&logo=cloudflare)](https://github.com/nrd-ai/notsquat-marketing-site)",
-        "desc": "Founding gym design-partner one-pager, operator presentation deck, and official email signature studio."
+        "badge": "[![Marketing Site](https://img.shields.io/badge/repo-marketing--site-FF5A36?style=flat-square&logo=cloudflare)](https://github.com/nrd-ai/notsquat-marketing-site)",
+        "desc": "Official marketing website deployed to notsquat.org with interactive 16-bit Gymtar avatar studio and early access beta enrollment."
+    },
+    "pixel-sprite-lab": {
+        "badge": "[![Pixel Lab](https://img.shields.io/badge/repo-pixel--sprite--lab-A855F7?style=flat-square&logo=visualstudiocode)](https://github.com/nrd-ai/pixel-sprite-lab)",
+        "desc": "Umbrella pipeline and AI generation engine for 16-bit RPG gym avatars, exercise sprites, and animation frame rigs."
     },
     "NotSquat-Data-Warehouse": {
         "badge": "[![Data Warehouse](https://img.shields.io/badge/repo-data--warehouse-FF6F00?style=flat-square&logo=googlebigquery)](https://github.com/nrd-ai/NotSquat-Data-Warehouse)",
@@ -193,7 +198,7 @@ def build_markdown(activities):
     lines.append('## 🧭 Repository Radar\n')
     lines.append('| Repository | Status & Tech | Focus & Description | Link |')
     lines.append('|---|---|---|---|')
-    radar_repos = ["Not-Squat", "notsquat-mobile-app", "notsquat-marketing-site", "NotSquat-Data-Warehouse", "Not-Squat-Detector-v0", "org-discord"]
+    radar_repos = ["Not-Squat", "notsquat-mobile-app", "notsquat-marketing-site", "pixel-sprite-lab", "NotSquat-Data-Warehouse", "Not-Squat-Detector-v0", "org-discord"]
     for repo in radar_repos:
         meta = REPO_METADATA.get(repo, {})
         lines.append(f'| [**`{repo}`**](https://github.com/{ORG}/{repo}) | {meta.get("badge", "")} | {meta.get("desc", "")} | [View Repo ➔](https://github.com/{ORG}/{repo}) |')
